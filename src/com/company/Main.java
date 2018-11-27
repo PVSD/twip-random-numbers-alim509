@@ -5,27 +5,15 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int array[] = new int[100];
+        int array[] = new int[10000];
         int counter = 0;
-        boolean complete = false;
+        int iterations = 100;
 
-	    while (Arrays.binarySearch(array, 0) >= 0)
+	    for (int n = 0; n < iterations; n++)
         {
             int num = (int)((Math.random() + 0.01) * 100);
-            array[num - 1]++;
+            array[n] = num;
             counter++;
-            complete = true;
-            for (int i = 0; i < 100; i ++)
-            {
-                if (array[i] == 0)
-                {
-                    complete = false;
-                }
-            }
-            if (complete)
-            {
-                break;
-            }
         }
 
         for (int i = 0; i < 100; i ++)
