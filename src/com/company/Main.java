@@ -1,29 +1,31 @@
 package com.company;
 
-import java.util.ArrayList;
-
 public class Main {
 
     public static void main(String[] args) {
 
-        ArrayList<Number> array = new ArrayList<>();
+        int array[] = new int[100];
         int counter = 0;
         int iterations = 100;
+        System.out.println(array.length);
 
 	    for (int n = 0; n < iterations; n++)
         {
-            ArrayList<Number> nums = new ArrayList<>();
-            for (int j = 1; j <= 100; j++)
-                nums.add(new Integer(j));
+            for (int j = 0; j < 100; j++)
+            {
+                array[j] = j + 1;
+            }
             counter = 0;
-            while (nums.size() != 0)
+            while (array.length != 0)
             {
                 counter++;
                 int num = (int) ((Math.random() + 0.01) * 100);
-                for (int m = 0; m < nums.size(); m++)
+                for (int m = 0; m < array.length; m++)
                 {
-                    if (nums[m] == num)
-                        nums.remove(m);
+                    if (array[m] == num)
+                    {
+                        array[m] = 0;
+                    }
                 }
 
             }
